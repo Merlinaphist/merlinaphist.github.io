@@ -13,8 +13,6 @@
       margin: 0;
       padding: 0;
       background-color: #555;
-      position: fixed;
-      top: 0;
       width: 100%;
       overflow: hidden;
     }
@@ -39,24 +37,28 @@
       background-color: #4CAF50;
       color: white;
     }
-    
+    .layer0 {
+      position: fixed;
+      top: 0;
+    }
+    .layer1 {
+      position: relative;
+    }
   </style>
 </head>
 
 <body>
   
-  <div class="container-fluid">
-  <nav class="navbar-expend-sm">
+  <div class=layer0>
   <ul>
     <li><a href="#home" width:100px>Homepage</a></li>
     <li><a href="#news" width:100px>News</a></li>
     <li><a href="#contact" width:100px>Contact</a></li>
     <li style="float:right"><a class="active" href="#about" width:100px>About</a></li>
   </ul>
-  </nav>
   </div>
   
-  <div style="margin-top: 40px">
+  <div class=layer1>
   <header>
     <h2>Profile</h2>
   </header>
@@ -66,7 +68,7 @@
     <img src="me.jpg" alt="My Photo" style="width:300px;height:300px;">
   </figure>
   
-<p>I am Jiazheng Miao. The pronunciation is JA-JENG MIAW (JA in jacket, JE in Jerry, MI in milk, and AW as in law).</p>
+<p>I am Jiazheng Miao. The pronunciation is JA-JENG MIAW (JA in jacket, JE in Jerry, MI in milk, and AW in law).</p>
 <p>I am interested in bioinformatics and computational biology. I also like to develop mod for games (especially <em>Paradox Interactive</em>).<p>
 <p>My work includes:<p>
 <a href="http://anna16mlp.herokuapp.com">Artificial Neural Network Approximator for 16S rRNA Copy Number (ANNA16)</a>
