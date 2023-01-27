@@ -14,14 +14,50 @@
     figure {
       text-align: center;
     }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: SlateBlue;
+    }
+    a {
+      display:block;
+      width:60px;
+    }
+    li {
+      float: left;
+    }
+    li a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+    }
+    li a:hover {
+      background-color: #555;
+      color: white;
+    }
+    .active {
+      background-color: #4CAF50;
+      color: white;
+    }
+    
   </style>
 </head>
   
 <header>
   <h2>Hello World</h2>
 </header>
-  
+
 <body>
+  <ul>
+    <li><a href="#home">Homepage</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li style="float:right"><a class="active" href="#about">About</a></li>
+  </ul>
   <figure>
     <img src="me.jpg" alt="My Photo" style="width:300px;height:300px;">
   </figure>
