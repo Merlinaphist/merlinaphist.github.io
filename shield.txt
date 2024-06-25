@@ -1,1 +1,0 @@
-https://azgaar.github.io/Armoria/?coa={t1:harvard,shield:heater,division:{division:perCross,line:straight,t:duke},charges:[{charge:lionRampant,t:argent,p:e,size:0.6,t2:argent,t3:argent,x:30,y:40},{charge:bookOpen,t:argent,p:e,size:0.6,x:-37,y:-40},{charge:crossLatin,t:argent,p:e,size:0.7,x:-30,y:40},{charge:palace,t:argent,p:e,size:0.6,x:37,y:-40}]}
