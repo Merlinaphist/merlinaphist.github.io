@@ -58,6 +58,13 @@
       margin-top: 0;
       border-bottom: 2px solid #333;
       padding-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    section h2 img {
+      width: 24px;
+      height: 24px;
     }
     figure {
       text-align: center;
@@ -65,6 +72,23 @@
     figure img {
       width: 200px; /* Adjust the width to make the image smaller */
       height: auto;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    figure img.zoomed {
+      transform: scale(2);
+      z-index: 1000;
+      position: relative;
+    }
+    .shield-icon {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      vertical-align: middle;
+    }
+    .shield-icon.zoomed {
+      transform: scale(20);
+      z-index: 1000;
+      position: relative;
     }
     /* .contact a {
       color: #333;
@@ -87,30 +111,53 @@
       <!-- <h1>Profile</h1> -->
     <!-- </header> -->
     <section>
-      <h2>Introduction</h2>
+      <h2><img src="assets/shield.png" alt="Icon">Introduction</h2>
       <figure>
         <img src="assets/me.jpg" alt="My Photo" style="border-radius: 50%;">
       </figure>
-      <p>I am Jiazheng Miao /jadʒɛŋ mē'ou/. My research interest focuses on utilizing AI to study biological sequences. I worked in <a href="https://yajuanlin.github.io/" target="_blank">Lin lab</a> at Duke Kunshan University (now moved to TAMUCC) for my undergraduate dissertation, and <a href="https://mahafarhat.scholars.harvard.edu/" target="_blank">Farhat lab</a> at Harvard Medical School for my Master's capstone. Currently, I am a Ph.D. candidate in <a href="https://singhlab.net/" target="_blank">Singh lab</a> at Duke Unversity, studying AI for Antibody.</p>
-      <p>I like to play strategic games and write mods for them, especially those developed by <em>Paradox Interactive</em>, such as <em>Crusader Kings III</em>, <em>Victoria III</em>, <em>Stellaris</em> and <em>Europa Universalis IV</em>.</p>
+      <p style="line-height: 1.8;">I am Jiazheng Miao /jadʒɛŋ mē'ou/. My research interest focuses on <b>utilizing AI to study biological sequences</b>. 
+        I worked in <a href="https://yajuanlin.github.io/" target="_blank">Lin lab</a> at Duke Kunshan University (now moved to TAMUCC) for my undergraduate dissertation, 
+        and <a href="https://mahafarhat.scholars.harvard.edu/" target="_blank">Farhat lab</a> at Harvard Medical School for my Master's capstone. 
+        Currently, I am a Ph.D. candidate in <a href="https://singhlab.net/" target="_blank">Singh lab</a> at Duke Unversity, studying AI for Antibody. 
+        As I benefited deeply from these universities, 
+        I designed my page icon as a combination of the <em>Coats of Arms</em> of <u>Harvard Medical School</u> and <u>Duke University</u>: 
+        <img src="assets/shield.png" alt="Coat of Arms" class="shield-icon" style="width: 24px; height: 24px;">(click to see details)</p>
+      <p style="line-height: 1.8;">I also love playing strategic games and write mods for them, especially those developed by <em>Paradox Interactive</em>, 
+        such as <em>Crusader Kings III</em>, <em>Victoria III</em>, <em>Stellaris</em> and <em>Europa Universalis IV</em>.</p>
     </section>
     <section>
-      <h2>Education</h2>
+      <h2><img src="assets/shield.png" alt="Icon">Education</h2>
       <ul style="line-height: 1.8;">
         <li>Ph.D. in Electrical and Computer Engineering, <a href="https://ece.duke.edu/academics/phd/" target="_blank">Duke University</a>, 2025-present</li>
         <li>M.S. in Biomedical Informatics, <a href="https://dbmi.hms.harvard.edu/education/master-biomedical-informatics" target="_blank">Harvard Medical School</a>, 2023-2025</li>
         <li>B.S. in Molecular Bioscience, <a href="https://www.dukekunshan.edu.cn/" target="_blank">Duke Kunshan University</a>, 2019-2023</li>
       </ul>
-      <figure>
-        <img src="assets/shield.png" alt="Coat of Arms">
-      </figure>
-      <p><sup>†</sup> <em>My page icon is a combination of the Coats of Arms of <u>Harvard Medical School</u> and <u>Duke University</u>.</em></p>
     </section>
     <section class="contact">
-      <h2>Contact Me</h2>
+      <h2><img src="assets/shield.png" alt="Icon">Contact Me</h2>
       <!-- <p><a href="mailto:jiazheng_miao@hms.harvard.edu">jiazheng_miao@hms.harvard.edu</a></p> -->
       <p>Email: <a href="mailto:jm688@duke.edu">jm688@duke.edu</a></p>
     </section>
   </div>
+  <script>
+    // Zoom functionality for profile photo
+    document.querySelector('figure img').addEventListener('click', function() {
+      this.classList.toggle('zoomed');
+    });
+    
+    // Zoom functionality for shield icon
+    document.querySelector('.shield-icon').addEventListener('click', function() {
+      this.classList.toggle('zoomed');
+    });
+    
+    // Click outside to close zoom
+    document.addEventListener('click', function(e) {
+      if (!e.target.matches('img')) {
+        document.querySelectorAll('img.zoomed, .shield-icon.zoomed').forEach(img => {
+          img.classList.remove('zoomed');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
